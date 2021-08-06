@@ -1,0 +1,184 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Themes/theme.tres" type="Theme" id=1]
+[ext_resource path="res://Assets/Buttons/paterion.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Buttons/twitter.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Buttons/Itchio.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Buttons/Youtube.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/HomePanel.gd" type="Script" id=6]
+[ext_resource path="res://Assets/font/DramaSans.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+use_filter = true
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 14
+use_filter = true
+font_data = ExtResource( 7 )
+
+[node name="HomePanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 532.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 1024.0
+margin_bottom = 532.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="PanelContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 104.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/Panel"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1022.0
+margin_bottom = 102.0
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_right = 1020.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Welcome to Tileset Genenrator!"
+align = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/Panel/VBoxContainer"]
+margin_top = 69.0
+margin_right = 1020.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "v0.4"
+align = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
+margin_top = 536.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="HBoxContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 1022.0
+margin_bottom = 62.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 5
+custom_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer2/HBoxContainer"]
+margin_top = 5.0
+margin_right = 1010.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+custom_constants/separation = 15
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer"]
+margin_top = 14.0
+margin_right = 534.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer"]
+margin_left = 549.0
+margin_top = 10.0
+margin_right = 750.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Useful Links (opens browser):"
+
+[node name="Youtube" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer"]
+margin_left = 765.0
+margin_right = 815.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+hint_tooltip = "Watch my videos on Youtube."
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Youtube"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Itchio" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer"]
+margin_left = 830.0
+margin_right = 880.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+hint_tooltip = "View my Itch.io page."
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Itchio"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Twitter" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer"]
+margin_left = 895.0
+margin_right = 945.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+hint_tooltip = "Follow me on Twitter :)"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Twitter"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Patreon" type="Button" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer"]
+margin_left = 960.0
+margin_right = 1010.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+hint_tooltip = "Donate me on Patreon!"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Patreon"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Youtube" to="." method="_on_Youtube_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Itchio" to="." method="_on_Itchio_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Twitter" to="." method="_on_Twitter_pressed"]
+[connection signal="pressed" from="VBoxContainer/PanelContainer2/HBoxContainer/HBoxContainer/Patreon" to="." method="_on_Patreon_pressed"]
